@@ -100,9 +100,12 @@ section{padding:56px 0 8px}
 /* ---------- stalls ---------- */
 .stalls{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
 .stall{border:1px solid var(--felt-line);background:linear-gradient(180deg,rgba(0,0,0,.28),rgba(0,0,0,.12));display:flex;flex-direction:column}
-.nameplate{background:linear-gradient(180deg,var(--gold),var(--gold-dim));color:var(--ink);padding:10px 14px;display:flex;align-items:baseline;justify-content:space-between;gap:8px}
+.nameplate{background:linear-gradient(180deg,var(--gold),var(--gold-dim));color:var(--ink);padding:8px 14px 8px 10px;display:flex;align-items:center;gap:10px}
+.nameplate .face{width:48px;height:48px;border-radius:50%;object-fit:cover;flex:0 0 48px;
+  border:2px solid #4c3a0e;box-shadow:0 0 0 2px var(--brass-hi),0 2px 5px rgba(0,0,0,.35);
+  filter:grayscale(.85) sepia(.35) contrast(1.05)}
 .nameplate .nm{font-family:Graduate,serif;font-size:16px}
-.nameplate .since{font-family:var(--mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:#4c3a0e;white-space:nowrap}
+.nameplate .since{font-family:var(--mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:#4c3a0e;white-space:nowrap;margin-left:auto}
 .stall .bio{padding:14px 16px 4px;font-size:14.5px;color:var(--cream)}
 .stall .rows{padding:10px 16px 16px;margin-top:auto}
 .row{border-top:1px solid var(--felt-line);padding:9px 0 8px}
@@ -242,7 +245,7 @@ footer .gavel{font-family:var(--mono);font-size:11px;letter-spacing:.25em;text-t
   <div class="stalls">
 
     <div class="stall">
-      <div class="nameplate"><span class="nm">Alex Vanderhoof</span><span class="since">since '19</span></div>
+      <div class="nameplate"><img class="face" src="img/vanderhoof.jpg" alt="Alex Vanderhoof"><span class="nm">Alex Vanderhoof</span><span class="since">since '19</span></div>
       <p class="bio">Two draft-class titles ('19, '21) — nobody has more (Hutton is tied; do not tell Hutton). Also took Tyler Boyd to three separate drafts, like a man returning to a restaurant that hasn't served a meal since 2024.</p>
       <div class="rows">
         <div class="row"><div class="tag">Banner moment</div><div class="val"><b>Austin Ekeler, R1 2022</b> — RB1, 372.7 pts</div></div>
@@ -251,7 +254,7 @@ footer .gavel{font-family:var(--mono);font-size:11px;letter-spacing:.25em;text-t
     </div>
 
     <div class="stall">
-      <div class="nameplate"><span class="nm">Anthony Lisi</span><span class="since">since '19</span></div>
+      <div class="nameplate"><img class="face" src="img/lisi.jpg" alt="Anthony Lisi"><span class="nm">Anthony Lisi</span><span class="since">since '19</span></div>
       <p class="bio">Owns <b>four</b> of the league's ten worst early picks that played double-digit games — no injury excuse available: JuJu '19 (WR65), David Johnson '19 (RB37), Aaron Jones '23, Bucky Irving '25. His career highlight is a tight end.</p>
       <div class="rows">
         <div class="row"><div class="tag">Banner moment</div><div class="val"><b>Mark Andrews, R4 2021</b> — TE1. It's been quiet since.</div></div>
@@ -260,7 +263,7 @@ footer .gavel{font-family:var(--mono);font-size:11px;letter-spacing:.25em;text-t
     </div>
 
     <div class="stall">
-      <div class="nameplate"><span class="nm">Cole Macfarlane</span><span class="since">since '19</span></div>
+      <div class="nameplate"><img class="face" src="img/macfarlane.jpg" alt="Cole Macfarlane"><span class="nm">Cole Macfarlane</span><span class="since">since '19</span></div>
       <p class="bio">Patient man. Waited five years after his 2020 spoon, then drafted the third-best pick in league history — having already stolen a TE1-overall in Round 15 along the way.</p>
       <div class="rows">
         <div class="row"><div class="tag">Banner moment</div><div class="val"><b>Bijan Robinson, R1 2025</b> — RB2, 370.8 pts (+ LaPorta, R15 '23)</div></div>
@@ -269,7 +272,7 @@ footer .gavel{font-family:var(--mono);font-size:11px;letter-spacing:.25em;text-t
     </div>
 
     <div class="stall">
-      <div class="nameplate"><span class="nm">Gill Hawkins</span><span class="since">since '19</span></div>
+      <div class="nameplate"><img class="face" src="img/hawkins.jpg" alt="Gill Hawkins"><span class="nm">Gill Hawkins</span><span class="since">since '19</span></div>
       <p class="bio">Seven drafts, never finished last — and the league's designated victim of the football gods. If a superstar is about to get hurt, Gill has already drafted him.</p>
       <div class="rows">
         <div class="row"><div class="tag">Banner moment</div><div class="val"><b>Derrick Henry, R2 2024</b> — RB4, at age 30, out of spite</div></div>
@@ -278,7 +281,7 @@ footer .gavel{font-family:var(--mono);font-size:11px;letter-spacing:.25em;text-t
     </div>
 
     <div class="stall">
-      <div class="nameplate"><span class="nm">Greg Marks</span><span class="since">since '19</span></div>
+      <div class="nameplate"><img class="face" src="img/marks.jpg" alt="Greg Marks"><span class="nm">Greg Marks</span><span class="since">since '19</span></div>
       <p class="bio">Survived back-to-back spoons ('21–'22) and came back with the league's best 2025 haul outside the champ. Also drafted the league's only two-way player — the NFL officially files Travis Hunter under "cornerback."</p>
       <div class="rows">
         <div class="row"><div class="tag">Banner moment</div><div class="val"><b>Jonathan Taylor, R2 2025</b> — RB4, top-seven pick all-time</div></div>
@@ -287,7 +290,7 @@ footer .gavel{font-family:var(--mono);font-size:11px;letter-spacing:.25em;text-t
     </div>
 
     <div class="stall">
-      <div class="nameplate"><span class="nm">Jack Hutton</span><span class="since">since '19</span></div>
+      <div class="nameplate"><img class="face" src="img/hutton.jpg" alt="Jack Hutton"><span class="nm">Jack Hutton</span><span class="since">since '19</span></div>
       <p class="bio">Two class titles ('20, '25). Seven first-round picks, zero disasters — not one has finished outside the top 20 at his position. The rest of us would frame that record.</p>
       <div class="rows">
         <div class="row"><div class="tag">Banner moment</div><div class="val"><b>Ja'Marr Chase, R1 2024</b> — WR1, 403 pts (+ Maye, QB2, R15 '25)</div></div>
@@ -296,7 +299,7 @@ footer .gavel{font-family:var(--mono);font-size:11px;letter-spacing:.25em;text-t
     </div>
 
     <div class="stall">
-      <div class="nameplate"><span class="nm">Jack Pendrith</span><span class="since">since '19</span></div>
+      <div class="nameplate"><img class="face" src="img/pendrith.jpg" alt="Jack Pendrith"><span class="nm">Jack Pendrith</span><span class="since">since '19</span></div>
       <p class="bio">2024 champ. Drafts the double-digit rounds like it's Round 2: Hooper R10 '19, Hubbard R10 '24, Dowdle R12 '25. The bargain bin has a VIP section and he owns it.</p>
       <div class="rows">
         <div class="row"><div class="tag">Banner moment</div><div class="val"><b>Jonathan Taylor, R1 2021</b> — RB1, 373.1 pts</div></div>
@@ -305,7 +308,7 @@ footer .gavel{font-family:var(--mono);font-size:11px;letter-spacing:.25em;text-t
     </div>
 
     <div class="stall">
-      <div class="nameplate"><span class="nm">kirk baylis</span><span class="since">since '19</span></div>
+      <div class="nameplate"><img class="face" src="img/baylis.jpg" alt="kirk baylis"><span class="nm">kirk baylis</span><span class="since">since '19</span></div>
       <p class="bio">2023 champ, and owner of two of the great RB seasons of the era (Kamara '20, CMC '23 — both RB1). Ran both plays back later and got 4 games and an RB46. The sequel never hits the same.</p>
       <div class="rows">
         <div class="row"><div class="tag">Banner moment</div><div class="val"><b>Alvin Kamara, R1 2020</b> — RB1, 377.8 pts</div></div>
@@ -314,7 +317,7 @@ footer .gavel{font-family:var(--mono);font-size:11px;letter-spacing:.25em;text-t
     </div>
 
     <div class="stall">
-      <div class="nameplate"><span class="nm">Leo Katz</span><span class="since">since '19</span></div>
+      <div class="nameplate"><img class="face" src="img/katz.jpg" alt="Leo Katz"><span class="nm">Leo Katz</span><span class="since">since '19</span></div>
       <p class="bio">Holds the two best picks in league history (CMC '25, Kupp '21) and the 2022 title. Legally required to be mentioned in any conversation about drafting well, per Leo.</p>
       <div class="rows">
         <div class="row"><div class="tag">Banner moment</div><div class="val"><b>Christian McCaffrey, R1 2025</b> — RB1, 416.6 pts. The record.</div></div>
@@ -323,7 +326,7 @@ footer .gavel{font-family:var(--mono);font-size:11px;letter-spacing:.25em;text-t
     </div>
 
     <div class="stall">
-      <div class="nameplate"><span class="nm">Sam McAlpine</span><span class="since">since '23</span></div>
+      <div class="nameplate"><img class="face" src="img/mcalpine.jpg" alt="Sam McAlpine"><span class="nm">Sam McAlpine</span><span class="since">since '23</span></div>
       <p class="bio">Arrived in 2023 and immediately posted the lowest class score on record (112.1). We assume it was hazing. Two years later he drafted the WR1 overall, so the apology tour is officially over.</p>
       <div class="rows">
         <div class="row"><div class="tag">Banner moment</div><div class="val"><b>Puka Nacua, R1 2025</b> — WR1, 375 pts</div></div>
@@ -332,7 +335,7 @@ footer .gavel{font-family:var(--mono);font-size:11px;letter-spacing:.25em;text-t
     </div>
 
     <div class="stall">
-      <div class="nameplate"><span class="nm">spencer allen</span><span class="since">since '20</span></div>
+      <div class="nameplate"><img class="face" src="img/allen.jpg" alt="spencer allen"><span class="nm">spencer allen</span><span class="since">since '20</span></div>
       <p class="bio">Currently rebuilding. The '22 class flashed real talent (Tyreek in Round 2, WR2 overall) — the archives prove the ceiling exists. The archives have been quiet lately.</p>
       <div class="rows">
         <div class="row"><div class="tag">Banner moment</div><div class="val"><b>Tyreek Hill, R2 2022</b> — WR2, 341.2 pts</div></div>
@@ -341,7 +344,7 @@ footer .gavel{font-family:var(--mono);font-size:11px;letter-spacing:.25em;text-t
     </div>
 
     <div class="stall">
-      <div class="nameplate"><span class="nm">Tate Drummond</span><span class="since">since '20</span></div>
+      <div class="nameplate"><img class="face" src="img/drummond.jpg" alt="Tate Drummond"><span class="nm">Tate Drummond</span><span class="since">since '20</span></div>
       <p class="bio">Drafted Ezekiel Elliott three straight years ('22–'24). By the final installment Zeke finished RB62. That's not a draft strategy, that's a loyalty program.</p>
       <div class="rows">
         <div class="row"><div class="tag">Banner moment</div><div class="val"><b>Saquon Barkley, R1 2024</b> — RB2, 355.3 pts. Bought the dip.</div></div>
