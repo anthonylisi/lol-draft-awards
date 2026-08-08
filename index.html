@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>League of Legends — The Draft Awards, 2019–2025</title>
+<meta name="description" content="Seven years of draft picks, scored against reality. All grudges are data-driven.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Graduate&family=Lora:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --felt:#14342b; --felt-deep:#0d241d; --felt-line:#1e4a3c;
+  --gold:#d9a62e; --gold-dim:#a87f22; --brass-hi:#f3d98b; --brass-lo:#8a6a1c;
+  --cream:#f4e9d3; --cream-dim:#d9cdb2; --ink:#221d10; --rust:#c14a33;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:
+    radial-gradient(1200px 600px at 50% -200px, #1c4436 0%, transparent 60%),
+    repeating-linear-gradient(45deg, rgba(255,255,255,.012) 0 2px, transparent 2px 4px),
+    var(--felt);
+  color:var(--cream); font-family:Lora,Georgia,serif; line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px}
+.display{font-family:Graduate,serif;letter-spacing:.06em}
+.mono{font-family:var(--mono)}
+
+/* ---------- hero ---------- */
+header{padding:56px 0 8px;text-align:center}
+.crest{display:inline-block;border:3px double var(--gold);padding:26px 30px 22px;position:relative;background:linear-gradient(180deg,rgba(0,0,0,.18),rgba(0,0,0,0))}
+.crest::before,.crest::after{content:"★";color:var(--gold);position:absolute;top:8px;font-size:13px}
+.crest::before{left:12px}.crest::after{right:12px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.35em;text-transform:uppercase;color:var(--gold)}
+h1{font-family:Graduate,serif;font-size:clamp(30px,6.4vw,58px);line-height:1.05;margin:10px 0 6px;color:var(--cream)}
+h1 .accent{color:var(--gold)}
+.sub{font-style:italic;color:var(--cream-dim);font-size:clamp(15px,2.4vw,18px)}
+.tap{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-dim);margin-top:26px}
+
+/* ---------- rafters ---------- */
+.rafters{margin-top:34px;position:relative}
+.beam{height:14px;background:linear-gradient(180deg,#5a4426,#3a2c17);border-top:2px solid #6d5430;border-bottom:2px solid #241a0c;box-shadow:0 3px 8px rgba(0,0,0,.5)}
+.banner-row{display:flex;gap:14px;justify-content:flex-start;padding:0 20px;overflow-x:auto;scrollbar-width:thin;scrollbar-color:var(--gold-dim) transparent}
+@media(min-width:900px){.banner-row{justify-content:center;overflow:visible}}
+.banner{
+  flex:0 0 118px;background:linear-gradient(180deg,var(--cream) 0%,#e9dcbe 100%);color:var(--ink);
+  clip-path:polygon(0 0,100% 0,100% 82%,50% 100%,0 82%);
+  padding:16px 8px 34px;text-align:center;transform-origin:50% 0;
+  box-shadow:0 6px 14px rgba(0,0,0,.45);
+  animation:sway 7s ease-in-out infinite alternate;
+}
+.banner:nth-child(2n){animation-delay:-2.4s}
+.banner:nth-child(3n){animation-delay:-4.1s}
+@keyframes sway{from{transform:rotate(-1.1deg)}to{transform:rotate(1.1deg)}}
+@media(prefers-reduced-motion:reduce){.banner{animation:none}}
+.banner .yr{font-family:Graduate,serif;font-size:22px;color:var(--rust)}
+.banner .lbl{font-family:var(--mono);font-size:9px;letter-spacing:.22em;text-transform:uppercase;margin:4px 0;color:#6b5a33}
+.banner .who{font-family:Graduate,serif;font-size:12.5px;line-height:1.25}
+.banner .pts{font-family:var(--mono);font-size:10px;color:#6b5a33;margin-top:5px}
+
+/* ---------- spoon cabinet ---------- */
+.spoons{margin:44px auto 0;max-width:760px;border:1px solid var(--felt-line);background:rgba(0,0,0,.22);padding:20px 22px 18px}
+.spoons h3{font-family:Graduate,serif;font-size:15px;letter-spacing:.12em;color:var(--cream-dim);text-align:center}
+.spoons p.note{text-align:center;font-style:italic;font-size:13.5px;color:var(--cream-dim);margin:4px 0 12px}
+.spoon-grid{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.spoon{font-family:var(--mono);font-size:12px;border:1px solid var(--felt-line);padding:5px 10px;color:var(--cream-dim);background:rgba(0,0,0,.25)}
+.spoon b{color:var(--cream);font-weight:600}
+
+/* ---------- sections ---------- */
+section{padding:56px 0 8px}
+.sec-head{text-align:center;margin-bottom:30px}
+.sec-head h2{font-family:Graduate,serif;font-size:clamp(22px,4vw,32px);color:var(--gold)}
+.sec-head p{font-style:italic;color:var(--cream-dim);margin-top:6px}
+
+/* ---------- plaques ---------- */
+.plaques{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px}
+.plaque{
+  background:linear-gradient(160deg,var(--brass-hi) 0%,var(--gold) 30%,var(--gold-dim) 78%,var(--brass-lo) 100%);
+  color:var(--ink);padding:26px 24px 22px;position:relative;
+  border:1px solid #6d5417;box-shadow:0 10px 22px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.5);
+}
+.plaque::before,.plaque::after,
+.plaque .screws::before,.plaque .screws::after{
+  content:"";position:absolute;width:9px;height:9px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,#fdf4d4,#7a5d18 70%);box-shadow:inset 0 1px 2px rgba(0,0,0,.6);
+}
+.plaque::before{top:8px;left:8px}.plaque::after{top:8px;right:8px}
+.plaque .screws::before{bottom:8px;left:8px}.plaque .screws::after{bottom:8px;right:8px}
+.plaque .cat{font-family:var(--mono);font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:#5c4611;text-align:center}
+.plaque h3{font-family:Graduate,serif;font-size:21px;text-align:center;margin:6px 0 2px;text-shadow:0 1px 0 rgba(255,255,255,.45)}
+.plaque .winner{font-family:Graduate,serif;text-align:center;font-size:14px;color:#4c3a0e;margin-bottom:12px}
+.plaque p{font-size:14.5px;line-height:1.5}
+.plaque ul{list-style:none;margin-top:10px}
+.plaque li{font-family:var(--mono);font-size:12px;padding:4px 0;border-top:1px dashed rgba(60,45,10,.35)}
+.plaque .cite{margin-top:12px;font-style:italic;font-size:12.5px;color:#5c4611;text-align:center}
+
+/* ---------- stalls ---------- */
+.stalls{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.stall{border:1px solid var(--felt-line);background:linear-gradient(180deg,rgba(0,0,0,.28),rgba(0,0,0,.12));display:flex;flex-direction:column}
+.nameplate{background:linear-gradient(180deg,var(--gold),var(--gold-dim));color:var(--ink);padding:10px 14px;display:flex;align-items:baseline;justify-content:space-between;gap:8px}
+.nameplate .nm{font-family:Graduate,serif;font-size:16px}
+.nameplate .since{font-family:var(--mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:#4c3a0e;white-space:nowrap}
+.stall .bio{padding:14px 16px 4px;font-size:14.5px;color:var(--cream)}
+.stall .rows{padding:10px 16px 16px;margin-top:auto}
+.row{border-top:1px solid var(--felt-line);padding:9px 0 8px}
+.row .tag{font-family:var(--mono);font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold)}
+.row.bad .tag{color:#e0705a}
+.row .val{font-size:13.5px;color:var(--cream-dim);margin-top:3px}
+.row .val b{color:var(--cream);font-weight:600}
+
+/* ---------- footer ---------- */
+footer{margin-top:70px;border-top:1px solid var(--felt-line);padding:28px 0 46px;text-align:center}
+footer p{max-width:640px;margin:0 auto;font-size:12.5px;color:var(--cream-dim)}
+footer p+p{margin-top:10px}
+footer .gavel{font-family:var(--mono);font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold-dim);margin-top:16px}
+@media(max-width:520px){.banner{flex-basis:104px}}
+</style>
+</head>
+<body>
+
+<header class="wrap">
+  <div class="crest">
+    <div class="eyebrow">League of Legends &middot; Est. 2019</div>
+    <h1>The Draft <span class="accent">Awards</span></h1>
+    <div class="sub">Seven years of picks, scored against reality. No survivors.</div>
+  </div>
+  <div class="tap">2019 – 2025 &middot; 1,065 picks entered into evidence</div>
+</header>
+
+<!-- rafters -->
+<div class="rafters" aria-label="Draft class champions by year">
+  <div class="beam"></div>
+  <div class="banner-row">
+    <div class="banner"><div class="yr">2019</div><div class="lbl">Draft Champs</div><div class="who">Alex Vanderhoof</div><div class="pts">652.6 PTS</div></div>
+    <div class="banner"><div class="yr">2020</div><div class="lbl">Draft Champs</div><div class="who">Jack Hutton</div><div class="pts">513.9 PTS</div></div>
+    <div class="banner"><div class="yr">2021</div><div class="lbl">Draft Champs</div><div class="who">Alex Vanderhoof</div><div class="pts">626.0 PTS</div></div>
+    <div class="banner"><div class="yr">2022</div><div class="lbl">Draft Champs</div><div class="who">Leo Katz</div><div class="pts">689.9 PTS</div></div>
+    <div class="banner"><div class="yr">2023</div><div class="lbl">Draft Champs</div><div class="who">kirk baylis</div><div class="pts">517.2 PTS</div></div>
+    <div class="banner"><div class="yr">2024</div><div class="lbl">Draft Champs</div><div class="who">Jack Pendrith</div><div class="pts">608.4 PTS</div></div>
+    <div class="banner"><div class="yr">2025</div><div class="lbl">Draft Champs</div><div class="who">Jack Hutton</div><div class="pts">594.6 PTS</div></div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="spoons">
+    <h3>The Wooden Spoon Cabinet</h3>
+    <p class="note">Someone has to finish last. These men answered the call.</p>
+    <div class="spoon-grid">
+      <span class="spoon">2019 <b>Anthony Lisi</b></span>
+      <span class="spoon">2020 <b>Cole Macfarlane</b></span>
+      <span class="spoon">2021 <b>Greg Marks</b></span>
+      <span class="spoon">2022 <b>Greg Marks</b></span>
+      <span class="spoon">2023 <b>Sam McAlpine</b></span>
+      <span class="spoon">2024 <b>spencer allen</b></span>
+      <span class="spoon">2025 <b>spencer allen</b></span>
+    </div>
+  </div>
+</div>
+
+<!-- big awards -->
+<section class="wrap" id="awards">
+  <div class="sec-head">
+    <h2>The Major Trophies</h2>
+    <p>Engraved at considerable expense. Polished with tears.</p>
+  </div>
+  <div class="plaques">
+
+    <div class="plaque"><span class="screws"></span>
+      <div class="cat">Best pick, 2019–2025</div>
+      <h3>Pick of the Decade</h3>
+      <div class="winner">Leo Katz</div>
+      <p>Christian McCaffrey, Round 1, 2025: <b>416.6 points, RB1</b> — the single best pick in league history. The runner-up is also Leo (Cooper Kupp, Round 4, 2021, WR1). He holds first <i>and</i> second place and will mention it unprompted.</p>
+      <div class="cite">"I'd like to thank myself." — Leo, probably</div>
+    </div>
+
+    <div class="plaque"><span class="screws"></span>
+      <div class="cat">Late-round larceny</div>
+      <h3>The Dumpster Diver</h3>
+      <div class="winner">Jack Hutton</div>
+      <p>Drake Maye, <b>Round 15</b>, 2025 — finished <b>QB2</b> with 352 points. Taking a top-two quarterback with a pick normally reserved for kickers is just showing off.</p>
+      <ul>
+        <li>R10 T. Etienne '25 — Greg Marks</li>
+        <li>R15 S. LaPorta '23 — Cole Macfarlane</li>
+        <li>R11 M. Andrews '19 — Leo Katz</li>
+        <li>R15 R. Tannehill '20 (QB7) — Gill Hawkins</li>
+      </ul>
+    </div>
+
+    <div class="plaque"><span class="screws"></span>
+      <div class="cat">Right pick, wrong knee</div>
+      <h3>The Snakebit Trophy</h3>
+      <div class="winner">Gill Hawkins</div>
+      <p>Saquon Barkley, Round 1, 2020: <b>two games</b>, then the ACL. A perfectly good pick, ruined by football. This trophy exists so we all remember: injuries are bad luck, not bad drafting.</p>
+      <ul>
+        <li>N. Chubb '23 (2 gm) — Jack Pendrith</li>
+        <li>C. McCaffrey '24 (4 gm) — kirk baylis</li>
+        <li>T. Hill '25 (4 gm) — Alex Vanderhoof</li>
+        <li>J. Conner '25 (3 gm) — spencer allen</li>
+      </ul>
+    </div>
+
+    <div class="plaque"><span class="screws"></span>
+      <div class="cat">Combined stat line: nothing</div>
+      <h3>The Zero Club</h3>
+      <div class="winner">Alex Vanderhoof</div>
+      <p>In one 2025 draft, spent Round 11 on Brandon Aiyuk <i>and</i> Round 13 on Joe Mixon. Combined 2025 snaps: <b>zero</b>. Two roster spots, one hospital wing.</p>
+      <ul>
+        <li>A. Cooper R14 '25 (retired instead) — kirk baylis</li>
+        <li>D. Watson R15 '21 (0 gm) — Gill Hawkins</li>
+        <li>G. Edwards R5 '21 (preseason ACL) — kirk baylis</li>
+      </ul>
+    </div>
+
+    <div class="plaque"><span class="screws"></span>
+      <div class="cat">From the ashes</div>
+      <h3>The Redemption Arc</h3>
+      <div class="winner">Greg Marks</div>
+      <p>Back-to-back wooden spoons in '21 and '22. Then 2025: Jonathan Taylor in <b>Round 2</b> (finished RB4 — a top-seven pick in league history) and Travis Etienne in Round 10. The comeback is real and it is spectacular.</p>
+      <div class="cite">Character development, seven years in the making.</div>
+    </div>
+
+    <div class="plaque"><span class="screws"></span>
+      <div class="cat">Sustained excellence in suffering</div>
+      <h3>Iron Man of the Basement</h3>
+      <div class="winner">spencer allen</div>
+      <p>Back-to-back wooden spoons, '24 and '25 — and in '25 his big swing (James Conner, R4) lasted three games. The front office has announced a rebuild and asks for your patience during this difficult time.</p>
+      <div class="cite">"We like our young core." — the front office</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- GM stalls -->
+<section class="wrap" id="gms">
+  <div class="sec-head">
+    <h2>The Locker Room</h2>
+    <p>Twelve stalls. Every man gets his banner moment — and his incident report.</p>
+  </div>
+  <div class="stalls">
+
+    <div class="stall">
+      <div class="nameplate"><span class="nm">Alex Vanderhoof</span><span class="since">since '19</span></div>
+      <p class="bio">Two draft-class titles ('19, '21) — nobody has more. Also took Tyler Boyd to three separate drafts, like a man returning to a restaurant that closed.</p>
+      <div class="rows">
+        <div class="row"><div class="tag">Banner moment</div><div class="val"><b>Austin Ekeler, R1 2022</b> — RB1, 372.7 pts</div></div>
+        <div class="row bad"><div class="tag">The incident</div><div class="val">2025: two picks (Aiyuk, Mixon), <b>zero combined snaps</b></div></div>
+      </div>
+    </div>
+
+    <div class="stall">
+      <div class="nameplate"><span class="nm">Anthony Lisi</span><span class="since">since '19</span></div>
+      <p class="bio">Owns <b>four</b> of the league's ten worst early picks that actually suited up — JuJu '19 (WR65), David Johnson '19 (RB37), Aaron Jones '23, Bucky Irving '25. His career highlight is a tight end.</p>
+      <div class="rows">
+        <div class="row"><div class="tag">Banner moment</div><div class="val"><b>Mark Andrews, R4 2021</b> — TE1. It's been quiet since.</div></div>
+        <div class="row bad"><div class="tag">The incident</div><div class="val">The 2019 wooden spoon — a class so bad it stood as the record for <b>four years</b></div></div>
+      </div>
+    </div>
+
+    <div class="stall">
+      <div class="nameplate"><span class="nm">Cole Macfarlane</span><span class="since">since '19</span></div>
+      <p class="bio">Patient man. Waited five years after his 2020 spoon, then drafted the third-best pick in league history and a Round-15 tight end who finished TE1 overall.</p>
+      <div class="rows">
+        <div class="row"><div class="tag">Banner moment</div><div class="val"><b>Bijan Robinson, R1 2025</b> — RB2, 370.8 pts (+ LaPorta, R15 '23)</div></div>
+        <div class="row bad"><div class="tag">The incident</div><div class="val">The 2020 wooden spoon. We don't talk about 2020.</div></div>
+      </div>
+    </div>
+
+    <div class="stall">
+      <div class="nameplate"><span class="nm">Gill Hawkins</span><span class="since">since '19</span></div>
+      <p class="bio">Seven drafts, never finished last — and the league's designated victim of the football gods. If a superstar is about to get hurt, Gill has already drafted him.</p>
+      <div class="rows">
+        <div class="row"><div class="tag">Banner moment</div><div class="val"><b>Derrick Henry, R2 2024</b> — RB4, at age 30, out of spite</div></div>
+        <div class="row bad"><div class="tag">The incident</div><div class="val">Saquon '20: <b>2 games</b>. Also drafted Deshaun Watson's year off.</div></div>
+      </div>
+    </div>
+
+    <div class="stall">
+      <div class="nameplate"><span class="nm">Greg Marks</span><span class="since">since '19</span></div>
+      <p class="bio">Survived back-to-back spoons ('21–'22) and came back with the league's best 2025 haul outside the champ. Also drafted the league's only two-way player — the spreadsheet filed Travis Hunter under "cornerback."</p>
+      <div class="rows">
+        <div class="row"><div class="tag">Banner moment</div><div class="val"><b>Jonathan Taylor, R2 2025</b> — RB4, top-seven pick all-time</div></div>
+        <div class="row bad"><div class="tag">The incident</div><div class="val">2021 <i>and</i> 2022. The cabinet has a shelf with his name on it.</div></div>
+      </div>
+    </div>
+
+    <div class="stall">
+      <div class="nameplate"><span class="nm">Jack Hutton</span><span class="since">since '19</span></div>
+      <p class="bio">Two class titles ('20, '25). Seven first-round picks, zero disasters — his <i>worst</i> first-rounder finished RB16. The rest of us would frame that season.</p>
+      <div class="rows">
+        <div class="row"><div class="tag">Banner moment</div><div class="val"><b>Ja'Marr Chase, R1 2024</b> — WR1, 403 pts (+ Maye, QB2, R15 '25)</div></div>
+        <div class="row bad"><div class="tag">The incident</div><div class="val">Chris Carson, R4 2021 — 4 games. Even the machine glitches.</div></div>
+      </div>
+    </div>
+
+    <div class="stall">
+      <div class="nameplate"><span class="nm">Jack Pendrith</span><span class="since">since '19</span></div>
+      <p class="bio">2024 champ. Drafts Round 10 like it's Round 2: Hooper '19, Hubbard '24, Dowdle '25. The bargain bin has a VIP section and he owns it.</p>
+      <div class="rows">
+        <div class="row"><div class="tag">Banner moment</div><div class="val"><b>Jonathan Taylor, R1 2021</b> — RB1, 373.1 pts</div></div>
+        <div class="row bad"><div class="tag">The incident</div><div class="val">Nick Chubb '23: <b>2 games</b>. Filed under acts of God.</div></div>
+      </div>
+    </div>
+
+    <div class="stall">
+      <div class="nameplate"><span class="nm">kirk baylis</span><span class="since">since '19</span></div>
+      <p class="bio">2023 champ, and owner of two of the great RB seasons of the era (Kamara '20, CMC '23 — both RB1). Ran both plays back later and got 4 games and an RB46. The sequel never hits the same.</p>
+      <div class="rows">
+        <div class="row"><div class="tag">Banner moment</div><div class="val"><b>Alvin Kamara, R1 2020</b> — RB1, 377.8 pts</div></div>
+        <div class="row bad"><div class="tag">The incident</div><div class="val">Amari Cooper, R14 2025 — <b>retired</b> rather than report</div></div>
+      </div>
+    </div>
+
+    <div class="stall">
+      <div class="nameplate"><span class="nm">Leo Katz</span><span class="since">since '19</span></div>
+      <p class="bio">Holds the two best picks in league history (CMC '25, Kupp '21) and the 2022 title. Legally required to be mentioned in any conversation about drafting well, per Leo.</p>
+      <div class="rows">
+        <div class="row"><div class="tag">Banner moment</div><div class="val"><b>Christian McCaffrey, R1 2025</b> — RB1, 416.6 pts. The record.</div></div>
+        <div class="row bad"><div class="tag">The incident</div><div class="val">Travis Etienne, R1 2024 — played all 15 games, finished <b>RB35</b>. No excuses available.</div></div>
+      </div>
+    </div>
+
+    <div class="stall">
+      <div class="nameplate"><span class="nm">Sam McAlpine</span><span class="since">since '23</span></div>
+      <p class="bio">Arrived in 2023 and immediately posted the lowest class score on record (112.1). We assume it was hazing. Two years later he drafted the WR1 overall, so the apology tour is officially over.</p>
+      <div class="rows">
+        <div class="row"><div class="tag">Banner moment</div><div class="val"><b>Puka Nacua, R1 2025</b> — WR1, 375 pts</div></div>
+        <div class="row bad"><div class="tag">The incident</div><div class="val">The 2023 wooden spoon, in his first draft. Welcome to the league.</div></div>
+      </div>
+    </div>
+
+    <div class="stall">
+      <div class="nameplate"><span class="nm">spencer allen</span><span class="since">since '20</span></div>
+      <p class="bio">Currently rebuilding. The '22 class flashed real talent (Tyreek at pick 2 of Round 2, WR2 overall) — the archives prove the ceiling exists. The archives have been quiet lately.</p>
+      <div class="rows">
+        <div class="row"><div class="tag">Banner moment</div><div class="val"><b>Tyreek Hill, R2 2022</b> — WR2, 341.2 pts</div></div>
+        <div class="row bad"><div class="tag">The incident</div><div class="val">Spoons in '24 <b>and</b> '25. See: Iron Man of the Basement.</div></div>
+      </div>
+    </div>
+
+    <div class="stall">
+      <div class="nameplate"><span class="nm">Tate Drummond</span><span class="since">since '20</span></div>
+      <p class="bio">Drafted Ezekiel Elliott three straight years ('22–'24). By the final installment Zeke finished RB62. That's not a draft strategy, that's a loyalty program.</p>
+      <div class="rows">
+        <div class="row"><div class="tag">Banner moment</div><div class="val"><b>Saquon Barkley, R1 2024</b> — RB2, 355.3 pts. Bought the dip.</div></div>
+        <div class="row bad"><div class="tag">The incident</div><div class="val">The Zeke Trilogy. Nobody asked for a trilogy.</div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><b>How the sausage was made:</b> every drafted pick, 2019–2025 (1,065 of them), scored against actual NFL production at this league's PPR settings. A "class score" is total points above a startable replacement at each position. Keepers excluded — you have to <i>draft</i> your glory here. Kickers and defenses were spared, as is tradition.</p>
+    <p>2019 results count current members only. Injuries are bad luck, not bad picks — that's the whole point of the Snakebit Trophy. Disputes may be submitted in writing to the Wooden Spoon Cabinet.</p>
+    <div class="gavel">Compiled August 2026 &middot; All grudges are data-driven</div>
+  </div>
+</footer>
+
+</body>
+</html>
